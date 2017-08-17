@@ -81,3 +81,13 @@ SQL: UPDATE `leave_msg` SET `status`='1' WHERE ( id=30 ) [ RunTime:0.0683s ]
 [ 2017-08-17T17:13:52+08:00 ] ::1 /news/index.php/Admin/Local/set_hits/id/268
 ERR: 非法操作:set_hits
 
+[ 2017-08-17T19:07:25+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/32
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T19:07:29+08:00 ] ::1 /news/index.php/Admin/Lmsg/submit_success/id/32
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001723s ]
+SQL: SHOW COLUMNS FROM `leave_msg` [ RunTime:0.0012s ]
+SQL: UPDATE `leave_msg` SET `status`='1' WHERE ( id=32 ) [ RunTime:0.0492s ]
+

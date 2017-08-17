@@ -6,11 +6,11 @@
     <style>
         .id{width: 20px;margin: 0 auto;text-align: center}
         .xinx{width: 1100px;margin: 0  auto;border:0px  solid  red;
-            height: 500px; background-color:#ECF5FF;}
+            height: 520px; background-color:rgb(204,232,207);}
         .xinx_nav{width: 95%;height: 50px;margin:0 auto;border: 0px  solid  #000000}
         .xinx  table{width: 80%;height:auto;margin:0 auto;border: 0px  solid  red;font-size: 15px;margin-top: 20px}
         /*table{height: auto}*/
-        table, td, tr { border-collapse: collapse; border: 2px solid gainsboro;height: 20px}
+        table, td, tr { border-collapse: collapse; border: 1px solid gray;height: 20px}
         /*.xx_tr01 td{height: 20px}*/
 
         .xinx  table  .xxtd01{width: 15%;text-align: center;height: 25px}
@@ -179,8 +179,10 @@
            </tr ><?php endforeach; endif; ?>
        </table>
        <br>
-       <span  class="pages" style="margin-right: 20px;float: right"> <?php echo ($pagelist); ?> </span>
+       <span  class="pages" style="margin-right: 120px;float: right"> <?php echo ($pagelist); ?> </span>
+		
    </div>
+   <br>
 <!--footer引入-->
 <div class="bottom">
     <div class="zi">

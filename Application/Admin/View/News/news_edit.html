@@ -21,13 +21,60 @@
 				<input type="text" class="input-text" placeholder="标题颜色" value="{$newsinfo.title_color}" id="title_color" name="title_color">
 			</div>
 		</div>
+
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">新闻简略：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="{$newsinfo.brief}" placeholder="新闻简略" id="brief" name="brief">
 			</div>
 		</div>
+
+	<if condition="$cate_id">
+		<!--<?php echo($cate_id);?>-->
+		<!--获取到值-->
+		<?php foreach ($cate_id as $k1 => $v1):
+		if($k1 == 0)
+		$opt = '[+]';
+		else
+		$opt = '[-]';
+		?>
 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻分类：</label>
+			<a href="javascript:void(0);" onclick="addNew(this);">{$opt}</a>
+			<div class="formControls col-xs-8 col-sm-4"> <span class="select-box">
+				<!--<input onclick="$(this).parent().append($(this).next('select').clone());" type="button" value="添加" />-->
+				<select name="cate_id[]"  class="select" >
+                    <option value="-1">--请选择--</option>
+					<?php foreach ($cateInfo as $k => $v):
+					         	if($v['cate_id'] == $v1['cate_id'])
+			                    		$select='selected="selected"';
+			                    	else
+			                    		$select = '';
+			                    ?>
+			                    <option {$select} value="{$v.cate_id}">{$v.cate_name}</option>
+					<?php endforeach; ?>
+				</select>
+				</span>
+			</div>
+		</div>
+		<?php endforeach; ?>
+		<?php else: ?>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻分类：</label>
+			<a href="javascript:void(0);" onclick="addNew(this);">[+]</a>
+			<div class="formControls col-xs-8 col-sm-4"> <span class="select-box">
+				<!--<input onclick="$(this).parent().append($(this).next('select').clone());" type="button" value="添加" />-->
+				 <select name="cate_id[]" id="cate_id" class="select" >
+                    <option value="-1">--请选择--</option>
+                   <foreach  name="cateInfo" item="v">
+                     <option value="{$v.cate_id}" >├{$v.cate_name}</option>
+                  </foreach>
+				</select>
+				</span>
+			</div>
+		</div>
+	</if>
+		<!--<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻栏目：</label>
 			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
 				<select class="select" name="role_id">
@@ -41,26 +88,27 @@
 				</select>
 				</span>
 			</div>
-		</div>
+		</div>-->
+
+		<!--<div class="row cl">-->
+			<!--<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻分类：</label>-->
+			<!--<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">-->
+				<!--<select class="select" name="cate_id">-->
+				  <!--<foreach  name="cateInfo" item="vo">-->
+					<!--<if condition="$vo['cate_id'] eq $newsinfo['cate_id']">-->
+						<!--<option value="{$vo.cate_id}" selected>├{$vo.cate_name}</option>-->
+						<!--<else/>-->
+					   <!--<option value="{$vo.cate_id}" >├{$vo.cate_name}</option>-->
+					<!--</if>-->
+                  <!--</foreach>-->
+				<!--</select>-->
+				<!--</span>-->
+			<!--</div>-->
+		<!--</div>-->
 
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻分类：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select class="select" name="cate_id">
-				  <foreach  name="cateInfo" item="vo">
-					<if condition="$vo['cate_id'] eq $newsinfo['cate_id']">
-						<option value="{$vo.cate_id}" selected>├{$vo.cate_name}</option>
-						<else/>
-					   <option value="{$vo.cate_id}" >├{$vo.cate_name}</option>
-					</if>
-                  </foreach>
-				</select>
-				</span>
-			</div>
-		</div>
-		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章作者：</label>
-			<div class="formControls col-xs-8 col-sm-9">
+			<div class="formControls col-xs-8 col-sm-4">
 				<input type="text" class="input-text" value="{$newsinfo.author}" placeholder="" disabled id="author" name="author">
 			</div>
 		</div>
@@ -181,6 +229,19 @@
 <script type="text/javascript" src="__ADMIN_URL__/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript" src="__ADMIN_URL__/jquery.colorpicker.js"></script>
 <script type="text/javascript">
+	function addNew(a)
+	{
+		var div = $(a).parent();
+		if($(a).html() == "[+]")
+		{
+			var newdiv = div.clone(true);  // 深度克隆，把标签上的事件也克隆
+			newdiv.find("a").html("[-]");
+			div.after(newdiv);
+		}
+		else
+			div.remove();
+	}
+
 	$(function(){
 		$('.skin-minimal input').iCheck({
 			checkboxClass: 'icheckbox-blue',

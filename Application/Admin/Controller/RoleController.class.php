@@ -24,8 +24,6 @@ class RoleController extends IndexController
     	$priData = $priModel->getTree();
     	$this->assign('priData', $priData);
 
-
-
 		$this->display();
     }
     public function edit()

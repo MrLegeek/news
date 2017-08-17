@@ -8,34 +8,68 @@
 			<tr>
 				<td>
 					<?php foreach ($roleData as $k => $v): ?>
-					<input type="checkbox" name="role_id[]" value="{$v.id}" /> {$v.role_name}
+					<input type="checkbox" name="role_id[]" value="{$v.id}"  in="role_id"/> {$v.role_name}
 					<?php endforeach; ?>
 				</td>
 			</tr>
 		</div>
 	</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员类别：</label>
+			<div class="formControls col-xs-4 col-sm-4"> <span class="select-box">
+				<select name="local_id"  class="select" >
+                    <option value="0">默认本地管理员</option>
+					 <foreach  name="localData" item="vo">
+                     <option value="{$vo.local_id}">├{$vo.local_name}</option>
+                     </foreach>
+				</select>
+				</span>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>电话：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text" name="phone"  class="input-text" id="phone" value="" />
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>虚拟小号：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text" class="input-text" name="minphone" value="" />
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text"  class="input-text"name="email"  id='email' value="" />
+			</div>
+		</div>
+
 	<div class="row cl">
 		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账号：</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input  type="text" name="username" value="" />
+		<div class="formControls col-xs-8 col-sm-4">
+			<input  type="text"  class="input-text"name="username" value="" id="adminName" />
 		</div>
 	</div>
 	<div class="row cl">
 		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码：</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input type="password" size="25" name="password" />
+		<div class="formControls col-xs-8 col-sm-4">
+			<input type="password" class="input-text" size="25" name="password" id="password" />
 		</div>
 	</div>
 	<div class="row cl">
 		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
-		<div class="formControls col-xs-8 col-sm-9 skin-minimal">
-			<input type="password" size="25" name="cpassword" />
+		<div class="formControls col-xs-8 col-sm-4 skin-minimal">
+			<input type="password" class="input-text" size="25" name="cpassword" id="password2"  />
 		</div>
 	</div>
 	<div class="row cl">
 		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否启用 1：启用0：禁用</label>
-		<div class="formControls col-xs-8 col-sm-9">
-			<input  type="text" name="is_use" value="1" />
+		<div class="formControls col-xs-8 col-sm-4">
+			<input  type="text" class="input-text" name="is_use" value="1" />
 		</div>
 	</div>
 	<div class="row cl">
@@ -63,13 +97,10 @@ $(function(){
 		radioClass: 'iradio-blue',
 		increaseArea: '20%'
 	});
-	
-	$("#form-admin-add").validate({
+	/*$("#form-admin-add").validate({
 		rules:{
 			adminName:{
 				required:true,
-				minlength:4,
-				maxlength:16
 			},
 			password:{
 				required:true,
@@ -78,7 +109,7 @@ $(function(){
 				required:true,
 				equalTo: "#password"
 			},
-			sex:{
+			role_id:{
 				required:true,
 			},
 			phone:{
@@ -89,9 +120,7 @@ $(function(){
 				required:true,
 				email:true,
 			},
-			adminRole:{
-				required:true,
-			},
+
 		},
 		onkeyup:false,
 		focusCleanup:true,
@@ -111,7 +140,7 @@ $(function(){
 			parent.$('.btn-refresh').click();
 			parent.layer.close(index);
 		}
-	});
+	});*/
 });
 </script> 
 <!--/请在上方写此页面业务相关的脚本-->

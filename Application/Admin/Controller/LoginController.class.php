@@ -14,7 +14,7 @@ class LoginController extends Controller
 			if($model->validate($model->_login_validate)->create('',  7))
 			{
 				if(TRUE === $model->login())
-					redirect(U('Admin/Index/index')); // 直接跳转可以不提示信息
+				redirect(U('Admin/Index/index')); // 直接跳转可以不提示信息
 			}
 			$this->error($model->getError());
 		}

@@ -24,11 +24,10 @@ class FileModel extends Model{
             //把上传好的附件存储到数据库里边
             $post['upload_url'] = ltrim($file_url, '.');
             $post['file_name'] =$file_name;
-//            dump($post);die();
         }
         return $this->add($post);
-
     }
+
     function updateFile($post,$file){
         if ($file['upload_url']['error']<4) {
             //A. 处理上传的图片附件
@@ -38,6 +37,7 @@ class FileModel extends Model{
             $up = new \Think\Upload($cfg);
             //uploadOne()方法执行成功后会把附件(在服务器上)的名字和路径等相关信息给我们返回
             $z = $up->uploadOne($file);
+
             $file_url = $up->rootPath . $z['savepath'] . $z['savename'];//文件路径名
             $file_name= $up->$z['savepath'] .$z['name'];//文件名
             //把上传好的附件存储到数据库里边

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: admin
@@ -9,6 +8,66 @@
 namespace Admin\Model;
 use Think\Model;
 class NewsModel extends Model{
+    public function search($pageSize=10)
+    {
+    /**************************************** 搜索 ****************************************/
+        $where = array();
+        if($cate_name = I('get.cate_name'))
+            $where['cate_name'] = array('like', "%$cate_name%");
+        if($role_name = I('get.role_name'))
+            $where['role_name'] = array('like',  "%$role_name%");
+        if($title = I('get.title'))
+            $where['title'] = array('like',"%$title%");
+        $where['local_id']=0;
+        $where['del_flag']=0;
+        /**************************************** 分页 ****************************************/
+        $count = $this->alias('a')->join('left join role d on a.role_id=d.id left join news_cate b on a.id=b.news_id left join category c on c.cate_id=b.cate_id')->where($where)->count('distinct a.id');
+     $page = new \Think\Page($count, $pageSize);
+        // 配置翻页的样式
+        $page -> setConfig('header','<li class="rows">共<b>%TOTAL_ROW%</b>条记录&nbsp;第<b>%NOW_PAGE%</b>页/共<b>%TOTAL_PAGE%</b>页</li>');
+        $page->setConfig('last', '末页');
+        $page->setConfig('first', '首页');
+        $page -> setConfig('prev','上一页');
+        $page -> setConfig('next','下一页');
+        $page->setConfig('theme', '%FIRST%%UP_PAGE%%LINK_PAGE%%DOWN_PAGE%%END%%HEADER%');
+        $pageString = $page->show();
+        /************************************** 取数据 ******************************************/
+        $newlist = $this->alias('a')->field('a.*,GROUP_CONCAT(c.cate_name) cate_name,role_name')->join('left join role d on a.role_id=d.id left join news_cate b on a.id=b.news_id  left join category c on c.cate_id=b.cate_id')->where($where)->limit($page->firstRow.','.$page->listRows)->group('a.id')->order('a.id desc')->select();
+        return array(
+            'newlist'=>$newlist,
+            'page'=>$pageString,
+            'count'=>$count,
+            'where'=>$where,
+        );
+    }
+    //添加新闻之后，将cate_id与news_id存放在news_cate中间表
+    protected function _after_insert($data, $option)
+    {
+        $cateId = I('post.cate_id');
+        $cateId = array_flip(array_flip($cateId));
+        $cate = array();
+        foreach($cateId as $v){
+            if($v){
+                $cate[] = $v;
+            }
+        }
+        //dump($cate);
+      if($cate) {
+            $ncModel = M('NewsCate');
+            foreach ($cate as $v) {
+            $ncModel->add(array(
+             'news_id' => $data['id'],
+             'cate_id' => $v,
+                       ));
+                   }
+               }
+    }
+//    // 修改前
+//    protected function _before_update(&$data, $option)
+//    {
+//
+//    }
+
     public  function addImg($post,$file){
         if ($file['news_img']['error']<4) {
             //A. 处理上传的图片附件

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{$newsmsg.title}</title>
+    <!--头部导航栏开始-->
+    <!--<include file="Layout/header_footer"/>-->
+    <css href="__ROOT__/Application/Home/View/Layout/header_footer.css" />
+    <!--头部导航栏结束-->
+    <style>
+            a{text-decoration: none;color: #000000}
+            .newsContaint{width: 1100px;height: 1000px;border: 0px solid red;margin: 0 auto;
+            word-wrap:break-word;
+            word-break:break-all;
+            }
+            .news_Top{width: 1100px;height: 50px;margin: 0 auto;}
+            .news_Top h2{text-align: center;color: red;line-height: 50px}
+            .news_Details{width: 60%;height: 20px;margin:0 auto;border: 0px solid hotpink}
+            .news_Details span{float: left;margin-left: 40px}
+            .newsMain{width: 1100px ;margin: 0 auto;
+            word-wrap:break-word;
+            word-break:break-all;
+            }
+            </style>
+            <style>
+            #wapper {min-height: 100%;}
+            #main-content {
+                width: 1100px;
+                margin: 0 auto;
+                overflow:visible;
+                word-wrap:break-word;
+                word-break:break-all;
+                padding-bottom: 450px;}
+            .bottom {
+                position: relative;
+                margin-top: -60px;
+                clear:both;
+            }
+    </style>
+</head>
+
+<body style="background-color: rgb(204,232,207)">
+
+    <!--头部开始-->
+    <div class="top">
+        <!--头部导航栏开始-->
+        <include file="Layout/header"/>
+        <!--头部导航栏结束-->
+    </div>
+    <div id="wapper">
+        <!-- 主要内容 -->
+        <div id="main-content">
+            <!--<div class="newsContaint">-->
+            <div class="news_Top">
+                <h2>{$newsmsg.title}</h2>
+            </div>
+            <div class="news_Details">
+                <span>时间：{:date('m-d',$newsmsg['add_time'])}</span>
+                <span>作者：{$newsmsg.author}</span>
+                <span><a href="#">（浏览次数： {$newsmsg.view}）</a></span>
+            </div>
+            <hr style="border: 1px solid #dcdcdc"/>
+            <div class="newsMain">
+                {$newsmsg.content|htmlspecialchars_decode}
+            </div>
+            <!--</div>-->
+        </div>
+        <!--footer引入-->
+        <include file="Layout/footer" />
+    </div>
+
+</body>
+<!--footer引入-->
+<script>
+    var ajax;
+    if(window.XMLHttpRequest){ ajax = new XMLHttpRequest();}else{ ajax = new ActiveXObject('Microsoft.XMLHTTP');}
+    ajax.open('GET','__CONTROLLER__/set_hits/id/{$_GET[\'id\']}',true);
+    ajax.send();
+</script>
+</html>

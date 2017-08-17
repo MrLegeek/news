@@ -10,49 +10,50 @@
 		<input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>顶级权限：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<select name="parent_id">
-					<option value="0">顶级权限</option>
+			<div class="formControls col-xs-8 col-sm-3"><span class="select-box">
+				<select name="parent_id" class="select">
+					<option value="0" >顶级权限</option >
 					<?php foreach ($parentData as $k => $v): ?>
 					<?php if($v['id'] == $data['id'] || in_array($v['id'], $children)) continue ; ?>
 					<option <?php if($v['id'] == $data['parent_id']): ?>
-					selected="selected"
+					   selected="selected"
 					<?php endif; ?>
 					value="<?php echo $v['id']; ?>">
 					<?php echo str_repeat('-', 8*$v['level']).$v['pri_name']; ?>
 					</option>
 					<?php endforeach; ?>
 				</select>
+				</span>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">权限名称：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input  type="text" name="pri_name" value="<?php echo $data['pri_name']; ?>" />
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text" class="input-text" name="pri_name" value="<?php echo $data['pri_name']; ?>" />
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">模块名称：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input  type="text" name="module_name" value="<?php echo $data['module_name']; ?>" />
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text"class="input-text" name="module_name" value="<?php echo $data['module_name']; ?>" />
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">控制器名称：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input  type="text" name="controller_name" value="<?php echo $data['controller_name']; ?>" />
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text" class="input-text"name="controller_name" value="<?php echo $data['controller_name']; ?>" />
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">方法名称：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input  type="text" name="action_name" value="<?php echo $data['action_name']; ?>" />
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text"class="input-text" name="action_name" value="<?php echo $data['action_name']; ?>" />
 			</div>
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-				<input type="submit" class="button" value=" 确定 " />
-				<input type="reset" class="button" value=" 重置 " />
+				<input type="submit" class="btn btn-primary radius" value=" 确定 " />
+				<input type="reset"  class="btn btn-default radius" value=" 重置 " />
 			</div>
 		</div>
 	</form>

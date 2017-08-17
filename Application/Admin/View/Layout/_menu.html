@@ -1,11 +1,42 @@
 <aside class="Hui-aside">
 	<div class="menu_dropdown bk_2">
 		<dl id="menu-news">
-			<dt><i class="Hui-iconfont">&#xe616;</i> 新闻管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 支队新闻管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
 					<li><a data-href="{:U('News/news_add')}" data-title="新闻添加" href="javascript:void(0)">新闻添加</a></li>
+					<li><a data-href="{:U('Category/showlist')}" data-title="栏目管理" href="javascript:void(0)">栏目管理</a></li>
 					<li><a data-href="{:U('News/news_list')}" data-title="新闻列表" href="javascript:void(0)">新闻列表</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-manuscript">
+			<dt><i class="Hui-iconfont">&#xe636;</i> 地区稿件管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<foreach name="rolemsg" item="vo">
+					<li><a data-href="{:U('Local/local_list',array('id'=>$vo['id']))}" data-title="{$vo.role_name}" href="javascript:void(0)">{$vo.role_name}</a></li>
+					</foreach>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-lmsg">
+			<dt><i class="Hui-iconfont">&#xe68a;</i>首长信箱管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<!--{:U('Newslist/lst',array('cate_id'=>'8'))}-->
+					<li><a data-href="{:U('Lmsg/lmsg_list',array('type'=>0))}" data-title="支队长信箱" href="javascript:void(0)">支队长信箱</a></li>
+					<li><a data-href="{:U('Lmsg/lmsg_list',array('type'=>1))}" data-title="政委信箱" href="javascript:void(0)">政委信箱</a></li>
+				</ul>
+			</dd>
+		</dl>
+
+		<dl id="menu-duty">
+			<dt><i class="Hui-iconfont">&#xe637;</i>值班信息管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:U('Duty/duty_add')}" data-title="值班信息添加" href="javascript:void(0)">值班信息添加</a></li>
+					<li><a data-href="{:U('Duty/duty_list')}" data-title="值班信息列表" href="javascript:void(0)">值班信息列表</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -15,6 +46,7 @@
 				<ul>
 					<li><a data-href="{:U('File/file_add')}" data-title="文件添加" href="javascript:void(0)">文件添加</a></li>
 					<li><a data-href="{:U('File/file_list')}" data-title="文件列表" href="javascript:void(0)">文件列表</a></li>
+					<li><a data-href="{:U('File/maillist_add')}" data-title="文通讯录上传" href="javascript:void(0)">通讯录上传</a></li>
 				</ul>
 			</dd>
 		</dl>

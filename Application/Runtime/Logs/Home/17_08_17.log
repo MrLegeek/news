@@ -1,0 +1,174 @@
+[ 2017-08-17T16:19:35+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/169
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002194s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0014s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=169 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001542s ]
+
+[ 2017-08-17T16:19:37+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/142
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002214s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0014s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=142 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001603s ]
+
+[ 2017-08-17T16:19:39+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/93
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001619s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0014s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001805s ]
+
+[ 2017-08-17T16:19:42+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/89
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001781s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0015s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=89 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002062s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002356s ]
+
+[ 2017-08-17T16:19:47+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/93
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001736s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0016s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002079s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002354s ]
+
+[ 2017-08-17T16:20:11+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/89
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001624s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0013s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=89 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002072s ]
+
+[ 2017-08-17T16:20:13+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/93
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003404s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0011s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001514s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001687s ]
+
+[ 2017-08-17T16:43:58+08:00 ] ::1 /news/index.php/Home/UserCenter/css/lyz.calendar.css
+ERR: 非法操作:css
+
+[ 2017-08-17T16:43:58+08:00 ] ::1 /news/index.php/Home/UserCenter/js/lyz.calendar.min.js
+ERR: 非法操作:js
+
+[ 2017-08-17T16:44:26+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/142
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001512s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0010s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=142 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001513s ]
+
+[ 2017-08-17T16:44:29+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/93
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001555s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0010s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001354s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001509s ]
+
+[ 2017-08-17T16:44:35+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/169
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001621s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0012s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=169 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001765s ]
+
+[ 2017-08-17T16:44:38+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/93
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001541s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0009s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001987s ]
+
+[ 2017-08-17T16:44:43+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/89
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002501s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0011s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=89 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001951s ]
+
+[ 2017-08-17T16:52:30+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/89
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001677s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0012s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=89 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001724s ]
+
+[ 2017-08-17T16:52:33+08:00 ] ::1 /news/index.php/Home/UserCenter/reply_detail/id/93
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000863s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001715s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `file` WHERE ( type=1 and del_flag=0 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0015s ]
+SQL: SELECT `reply_msg` FROM `news` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002066s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002354s ]
+

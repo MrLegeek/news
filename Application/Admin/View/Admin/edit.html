@@ -26,32 +26,72 @@
 				</tr>
 			</div>
 		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员类别：</label>
+			<div class="formControls col-xs-4 col-sm-2"> <span class="select-box">
+				<select name="local_id"  class="select" >
+                    <if condition="$data['local_id'] eq 0">
+					  <option value="0" >本地管理员</option>
+						<else/>
+						<foreach  name="localData" item="vo">
+							<if condition="$vo['local_id'] eq $data['local_id']">
+								<option value="{$vo.local_id}" selected>├{$vo.local_name}</option>
+								<else/>
+							   <option value="{$vo.local_id}" >├{$vo.local_name}</option>
+							</if>
+					  </foreach>
+					</if>
+				</select>
+				</span>
+			</div>
+		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账号：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input  type="text" name="username" value="<?php echo $data['username']; ?>" />
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text" class="input-text" name="username" value="{$data['username']}" />
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>电话：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text" class="input-text" name="phone" value="{$data['phone']}" />
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>虚拟小号：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text" class="input-text" name="minphone" value="{$data['minphone']}" />
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<input  type="text"  class="input-text"name="email" value="{$data['email']}"/>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="password" size="25" name="password" />编辑时密码可不填
+			<div class="formControls col-xs-8 col-sm-4">
+				<input type="password"  class="input-text"size="25" name="password" />编辑时密码可不填
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
-			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
-				<input type="password" size="25" name="cpassword" />
+			<div class="formControls col-xs-8 col-sm-4 skin-minimal">
+				<input type="password"  class="input-text"size="25" name="cpassword" />
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span></label>
-			<div class="formControls col-xs-8 col-sm-9">
+			<div class="formControls col-xs-8 col-sm-4">
 				<?php if($data['id'] > 1): ?>
 				<tr>
 					<td class="label">是否启用</td>
 					<td>
-						<input type="radio" name="is_use" value="1" <?php if($data['is_use'] == '1') echo 'checked="checked"'; ?> />启用
+						<input type="radio" name="is_use" value="1" <?php if($data['is_use'] == '1') echo 'checked="checked"'; ?>/>启用
 						<input type="radio" name="is_use" value="0" <?php if($data['is_use'] == '0') echo 'checked="checked"'; ?> />禁用
 					</td>
 				</tr>

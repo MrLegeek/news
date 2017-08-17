@@ -6,19 +6,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<link rel="Bookmark" href="/Public/Admin//favicon.ico" >
-<link rel="Shortcut Icon" href="/Public/Admin//favicon.ico" />
+<link rel="Bookmark" href="/news/Public/Admin//favicon.ico" >
+<link rel="Shortcut Icon" href="/news/Public/Admin//favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="/Public/Admin/lib/html5shiv.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/respond.min.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/respond.min.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="/Public/Admin/static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="/Public/Admin/static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="/Public/Admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="/Public/Admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="/Public/Admin/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/news/Public/Admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/news/Public/Admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/news/Public/Admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/news/Public/Admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/news/Public/Admin/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
-<script type="text/javascript" src="/Public/Admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 
@@ -40,7 +40,7 @@
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">标题颜色：</label>
-			<div class="formControls col-xs-8 col-sm-9">
+			<div class="formControls col-xs-8 col-sm-4">
 				<input type="text" class="input-text" placeholder="标题颜色" id="title_color" name="title_color">
 			</div>
 		</div>
@@ -50,29 +50,37 @@
 				<input type="text" class="input-text" value="" placeholder="新闻简略" id="brief" name="brief">
 			</div>
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>栏目分类：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+		<!--<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>所属部门：</label>
+			<div class="formControls col-xs-8 col-sm-4"> <span class="select-box">
 				<select name="role_id" id="role_id" class="select" >
-                    <option value="-1">--请选择--</option>
+                    <option value="-1">&#45;&#45;请选择&#45;&#45;</option>
                  <?php if(is_array($role_list)): foreach($role_list as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>" >├<?php echo ($vo["role_name"]); ?></option><?php endforeach; endif; ?>
 				</select>
 				</span>
 			</div>
-		</div>
+		</div>-->
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻分类：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="cate_id" id="cate_id" class="select" >
-                    <option value="-1">--请选择--</option>
+			<a href="javascript:void(0);" onclick="addNew(this);">[+]</a>
+			<div class="formControls col-xs-8 col-sm-4"> <span class="select-box">
+				<select name="cate_id[]" id="cate_id" class="select" >
+                    <option value="0">--请选择--</option>
                  <?php if(is_array($category_list)): foreach($category_list as $key=>$vo): ?><option value="<?php echo ($vo["cate_id"]); ?>" >├<?php echo ($vo["cate_name"]); ?></option><?php endforeach; endif; ?>
 				</select>
 				</span>
 			</div>
 		</div>
 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">所属部门：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<?php if(is_array($rolename)): foreach($rolename as $key=>$vo): ?><input type="text" class="input-text" value="<?php echo ($vo["role_name"]); ?>"  placeholder="" disabled  name="<?php echo ($vo["role_id"]); ?>" id="role_id"><?php endforeach; endif; ?>
+			</div>
+		</div>
+
+		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章作者：</label>
-			<div class="formControls col-xs-8 col-sm-9">
+			<div class="formControls col-xs-8 col-sm-4">
 				<input type="text" class="input-text" value="<?php echo (session('username')); ?>" placeholder="" disabled id="author" name="author">
 			</div>
 		</div>
@@ -130,27 +138,39 @@
 </article>
 <!--<webuploaderjs />-->
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="/Public/Admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="/Public/Admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="/Public/Admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript" src="/news/Public/Admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/Public/Admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="/Public/Admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="/news/Public/Admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 
-<script type="text/javascript" src="/Public/Admin/jquery.colorpicker.js"></script>
+<script type="text/javascript" src="/news/Public/Admin/jquery.colorpicker.js"></script>
 <script type="text/javascript">
+function addNew(a)
+	{
+		var div = $(a).parent();
+		if($(a).html() == "[+]")
+		{
+			var newdiv = div.clone(true);  // 深度克隆，把标签上的事件也克隆
+			newdiv.find("a").html("[-]");
+			div.after(newdiv);
+		}
+		else
+			div.remove();
+	}
 	$(function(){
-		//新闻分类严重
+		//新闻分类
 		$("#form-article-add").submit(function () {
-			if($("#cate_id").val()==-1){
+			if($("#cate_id").val()==0){
 				alert("请选择新闻分类！！");
 				return false;
 			}else if ($("#role_id").val()==-1){
@@ -198,57 +218,6 @@
 			increaseArea: '20%'
 		});
 
-		//表单验证
-//		$("#form-article-add").validate({
-//			rules:{
-//				articletitle:{
-//					required:true,
-//				},
-//				articletitle2:{
-//					required:true,
-//				},
-//				articlecolumn:{
-//					required:true,
-//				},
-//				articletype:{
-//					required:true,
-//				},
-//				articlesort:{
-//					required:true,
-//				},
-//				keywords:{
-//					required:true,
-//				},
-//				abstract:{
-//					required:true,
-//				},
-//				author:{
-//					required:true,
-//				},
-//				sources:{
-//					required:true,
-//				},
-//				allowcomments:{
-//					required:true,
-//				},
-//				commentdatemin:{
-//					required:true,
-//				},
-//				commentdatemax:{
-//					required:true,
-//				},
-//
-//			},
-//			onkeyup:false,
-//			focusCleanup:true,
-//			success:"valid",
-//			submitHandler:function(form){
-//				//$(form).ajaxSubmit();
-//				var index = parent.layer.getFrameIndex(window.name);
-//				//parent.$('.btn-refresh').click();
-//				parent.layer.close(index);
-//			}
-//		});
 
 		$list = $("#fileList"),
 				$btn = $("#btn-star"),

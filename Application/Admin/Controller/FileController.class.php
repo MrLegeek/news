@@ -9,7 +9,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 
-class FileController extends Controller{
+class FileController extends IndexController{
 
     function  file_list(){
         $file=D('file');
@@ -33,7 +33,6 @@ class FileController extends Controller{
             $post=I('post.');
             $post['add_time']=time();
             $post['author']= session('username');
-
             $file=D('file');
             $addInfo=$file->uploadFile($post,$_FILES['upload_url']);
             if(!$addInfo) {  // 上传错误提示错误信息
@@ -48,7 +47,33 @@ class FileController extends Controller{
         }
 
     }
-    //新闻批量删除
+ function  maillist_add(){
+        if(IS_POST){
+            $post=I('post.');
+
+
+            $post['add_time']=time();
+            $post['author']= session('username');
+
+            if($_POST['type']==1){
+                $file=D('file');
+                $file->where('type=1')->delete();
+            }
+            $addInfo=$file->uploadfile($post,$_FILES['upload_url']);
+            if(!$addInfo) {
+                // 上传错误提示错误信息
+                $this->error('上传文件失败！');
+            }
+            else{// 上传成功
+                $this->success('上传文件成功！',U('maillist_add'),2);
+            }
+        }else{
+            $this->display();
+        }
+
+    }
+
+    //文件批量删除
     function batchDel(){
 //        dump($_POST);die();
         if(IS_AJAX){
@@ -56,9 +81,9 @@ class FileController extends Controller{
             $file=D("file");
             $ids=explode(",",$ids);
             $map['id']=array("in",$ids);
-            $file->where($map)->setField("del_flag","1");
-            if ($ids){
-                $this->ajaxReturn($ids);
+            $res=$file->where($map)->setField("del_flag","1");
+            if ($res){
+                $this->ajaxReturn(1);
             }else{
                 $this->ajaxReturn(0);
             }
@@ -73,7 +98,7 @@ class FileController extends Controller{
             $map['id']=array("EQ",$id);
             $res=$file->where($map)->setField("del_flag","1");
             if ($res){
-                $this->ajaxReturn($id);
+                $this->ajaxReturn(1);
             }else{
                 $this->ajaxReturn(0);
             }

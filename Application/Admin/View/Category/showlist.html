@@ -8,15 +8,13 @@
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
-	<div class="text-c">
-        <!--<form action="__CONTROLLER__/serach" method="post">-->       <!--</form>-->
+	<!--<div class="text-c">
+        &lt;!&ndash;<form action="__CONTROLLER__/serach" method="post">&ndash;&gt;       &lt;!&ndash;</form>&ndash;&gt;
 		<input type="text" name="s_content" id="s_content" placeholder="栏目名称、id" style="width:250px" class="input-text">
 		<button name="submit" id="submit" class="btn btn-success"  onclick="goods_category_serch('__CONTROLLER__/serach')"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
-
-	</div>
+	</div>-->
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
 		<span class="l">
-		<a href="javascript:;" onclick="datadel('__CONTROLLER__/batch_del')" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
 		<a class="btn btn-primary radius" onclick="system_category_add('添加分类','__CONTROLLER__/add',700,480)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加分类</a>
 		</span>
 		<span class="r">共有数据：<strong> <php> echo count($info) ;</php> </strong> 条</span>

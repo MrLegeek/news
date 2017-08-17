@@ -1,0 +1,83 @@
+[ 2017-08-17T16:13:47+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/29
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:14:26+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/29
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:14:40+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/29
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:14:52+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/25
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:15:13+08:00 ] ::1 /news/index.php/Admin/Lmsg/submit_fail/id/25
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002286s ]
+SQL: SHOW COLUMNS FROM `leave_msg` [ RunTime:0.0010s ]
+SQL: UPDATE `leave_msg` SET `status`='2' WHERE ( id=25 ) [ RunTime:0.0541s ]
+
+[ 2017-08-17T16:15:19+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/24
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:15:21+08:00 ] ::1 /news/index.php/Admin/Lmsg/submit_success/id/24
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003273s ]
+SQL: SHOW COLUMNS FROM `leave_msg` [ RunTime:0.0011s ]
+SQL: UPDATE `leave_msg` SET `status`='1' WHERE ( id=24 ) [ RunTime:0.0689s ]
+
+[ 2017-08-17T16:22:29+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/28
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:22:33+08:00 ] ::1 /news/index.php/Admin/Lmsg/submit_success/id/28
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002563s ]
+SQL: SHOW COLUMNS FROM `leave_msg` [ RunTime:0.0013s ]
+SQL: UPDATE `leave_msg` SET `status`='1' WHERE ( id=28 ) [ RunTime:0.0590s ]
+
+[ 2017-08-17T16:22:53+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/27
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:22:56+08:00 ] ::1 /news/index.php/Admin/Lmsg/submit_fail/id/27
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001849s ]
+SQL: SHOW COLUMNS FROM `leave_msg` [ RunTime:0.0011s ]
+SQL: UPDATE `leave_msg` SET `status`='2' WHERE ( id=27 ) [ RunTime:0.0620s ]
+
+[ 2017-08-17T16:25:01+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/30
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:26:43+08:00 ] ::1 /news/index.php/Admin/Local/set_hits/id/268
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:31:42+08:00 ] ::1 /news/index.php/Admin/Local/set_hits/id/268
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:34:17+08:00 ] ::1 /news/index.php/Admin/Local/set_hits/id/268
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:35:41+08:00 ] ::1 /news/index.php/Admin/Local/set_hits/id/268
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T16:39:54+08:00 ] ::1 /news/index.php/Admin/Local/set_hits/id/268
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T17:13:15+08:00 ] ::1 /news/index.php/Admin/Local/set_hits/id/268
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T17:13:30+08:00 ] ::1 /news/index.php/Admin/Lmsg/set_hits/id/30
+ERR: 非法操作:set_hits
+
+[ 2017-08-17T17:13:33+08:00 ] ::1 /news/index.php/Admin/Lmsg/submit_success/id/30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001515s ]
+SQL: SHOW COLUMNS FROM `leave_msg` [ RunTime:0.0013s ]
+SQL: UPDATE `leave_msg` SET `status`='1' WHERE ( id=30 ) [ RunTime:0.0683s ]
+
+[ 2017-08-17T17:13:52+08:00 ] ::1 /news/index.php/Admin/Local/set_hits/id/268
+ERR: 非法操作:set_hits
+

@@ -19,9 +19,7 @@ define('APP_DEBUG',True);
 
 // 定义应用目录
 define('APP_PATH','./Application/');
-//图片上传路径
-define('WORKING_PATH',str_replace('\\','/',__DIR__));
-define('UPLOAD_ROOT_PATH','/Public/Uploads/');
+
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 

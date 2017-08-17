@@ -15,7 +15,7 @@
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">标题颜色：</label>
-			<div class="formControls col-xs-8 col-sm-9">
+			<div class="formControls col-xs-8 col-sm-4">
 				<input type="text" class="input-text" placeholder="标题颜色" id="title_color" name="title_color">
 			</div>
 		</div>
@@ -25,23 +25,24 @@
 				<input type="text" class="input-text" value="" placeholder="新闻简略" id="brief" name="brief">
 			</div>
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>栏目分类：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+		<!--<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>所属部门：</label>
+			<div class="formControls col-xs-8 col-sm-4"> <span class="select-box">
 				<select name="role_id" id="role_id" class="select" >
-                    <option value="-1">--请选择--</option>
+                    <option value="-1">&#45;&#45;请选择&#45;&#45;</option>
                  <foreach  name="role_list" item="vo">
                      <option value="{$vo.id}" >├{$vo.role_name}</option>
                   </foreach>
 				</select>
 				</span>
 			</div>
-		</div>
+		</div>-->
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻分类：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="cate_id" id="cate_id" class="select" >
-                    <option value="-1">--请选择--</option>
+			<a href="javascript:void(0);" onclick="addNew(this);">[+]</a>
+			<div class="formControls col-xs-8 col-sm-4"> <span class="select-box">
+				<select name="cate_id[]" id="cate_id" class="select" >
+                    <option value="0">--请选择--</option>
                  <foreach  name="category_list" item="vo">
                      <option value="{$vo.cate_id}" >├{$vo.cate_name}</option>
                   </foreach>
@@ -50,8 +51,17 @@
 			</div>
 		</div>
 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">所属部门：</label>
+			<div class="formControls col-xs-8 col-sm-4">
+				<foreach name="rolename" item="vo">
+				<input type="text" class="input-text" value="{$vo.role_name}"  placeholder="" disabled  name="{$vo.role_id}" id="role_id">
+				</foreach>
+			</div>
+		</div>
+
+		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章作者：</label>
-			<div class="formControls col-xs-8 col-sm-9">
+			<div class="formControls col-xs-8 col-sm-4">
 				<input type="text" class="input-text" value="{$Think.session.username}" placeholder="" disabled id="author" name="author">
 			</div>
 		</div>
@@ -123,10 +133,22 @@
 
 <script type="text/javascript" src="__ADMIN_URL__/jquery.colorpicker.js"></script>
 <script type="text/javascript">
+function addNew(a)
+	{
+		var div = $(a).parent();
+		if($(a).html() == "[+]")
+		{
+			var newdiv = div.clone(true);  // 深度克隆，把标签上的事件也克隆
+			newdiv.find("a").html("[-]");
+			div.after(newdiv);
+		}
+		else
+			div.remove();
+	}
 	$(function(){
-		//新闻分类严重
+		//新闻分类
 		$("#form-article-add").submit(function () {
-			if($("#cate_id").val()==-1){
+			if($("#cate_id").val()==0){
 				alert("请选择新闻分类！！");
 				return false;
 			}else if ($("#role_id").val()==-1){
@@ -174,57 +196,6 @@
 			increaseArea: '20%'
 		});
 
-		//表单验证
-//		$("#form-article-add").validate({
-//			rules:{
-//				articletitle:{
-//					required:true,
-//				},
-//				articletitle2:{
-//					required:true,
-//				},
-//				articlecolumn:{
-//					required:true,
-//				},
-//				articletype:{
-//					required:true,
-//				},
-//				articlesort:{
-//					required:true,
-//				},
-//				keywords:{
-//					required:true,
-//				},
-//				abstract:{
-//					required:true,
-//				},
-//				author:{
-//					required:true,
-//				},
-//				sources:{
-//					required:true,
-//				},
-//				allowcomments:{
-//					required:true,
-//				},
-//				commentdatemin:{
-//					required:true,
-//				},
-//				commentdatemax:{
-//					required:true,
-//				},
-//
-//			},
-//			onkeyup:false,
-//			focusCleanup:true,
-//			success:"valid",
-//			submitHandler:function(form){
-//				//$(form).ajaxSubmit();
-//				var index = parent.layer.getFrameIndex(window.name);
-//				//parent.$('.btn-refresh').click();
-//				parent.layer.close(index);
-//			}
-//		});
 
 		$list = $("#fileList"),
 				$btn = $("#btn-star"),

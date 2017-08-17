@@ -14,7 +14,7 @@ class PrivilegeModel extends Model
 		array('controller_name', 'require', '控制器名称不能为空！', 1, 'regex', 3),
 		array('controller_name', '1,10', '控制器名称的值最长不能超过 10 个字符！', 1, 'length', 3),
 		array('action_name', 'require', '方法名称不能为空！', 1, 'regex', 3),
-		array('action_name', '1,10', '方法名称的值最长不能超过 10 个字符！', 1, 'length', 3),
+		array('action_name', '1,15', '方法名称的值最长不能超过 15 个字符！', 1, 'length', 3),
 		array('parent_id', 'number', '上级权限的ID，0：代表顶级权限必须是一个整数！', 2, 'regex', 3),
 	);
 	/************************************* 递归相关方法 *************************************/
